@@ -378,7 +378,8 @@ Check out the documentation for more details. https://developer.github.com/v3/#r
   }
 
   [void] DetectInternetConnectivity() {
-    if (!(Test-Connection -ComputerName 8.8.8.8 -Count 1 -Quiet)) {
+    $dnsServer = '8.8.8.8' # Public DNS server
+    if (!(Test-Connection -ComputerName $dnsServer -Count 1 -Quiet)) {
       if ($null -ne $this.timeout) {
         Start-Sleep -Milliseconds $this.timeout
         $this.timer.Stop()
