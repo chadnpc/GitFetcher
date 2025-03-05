@@ -17,6 +17,7 @@ then
 ```PowerShell
 Import-Module GitFetcher
 # do stuff here.
+GitFetcher --url='https://github.com/user/repository' --out='~/output' --auth='b64 bearer token or username:password'
 ```
 
 ## License
